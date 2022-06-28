@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           themeMode: ThemeMode.dark,
           darkTheme: ThemeData.dark(),
           routes: {
-            Home.id: (context) => Home(),
+            Home.id: (context) => const Home(),
           },
           initialRoute: Home.id,
         ));
