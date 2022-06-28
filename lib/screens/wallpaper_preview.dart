@@ -13,17 +13,44 @@ class WallPreview extends StatelessWidget {
     final image = images.firstWhere(
       (element) => element.id == id,
     );
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Image.network(
-            image.url,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.cover,
-          )
-        ],
-      ),
+    return Stack(
+      children: <Widget>[
+        Image.network(
+          image.url,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+          ),
+          body: Align(
+            alignment: Alignment.bottomCenter,
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.white,
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
