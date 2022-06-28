@@ -15,8 +15,10 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
         create: ((context) => bgData()),
         child: MaterialApp(
+          themeMode: ThemeMode.dark,
+          darkTheme: ThemeData.dark(),
           routes: {
-            Home.id: (context) => const Home(),
+            Home.id: (context) => Home(),
           },
           initialRoute: Home.id,
         ));
