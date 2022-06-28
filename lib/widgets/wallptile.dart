@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:wallbay/screens/wallpaper_preview.dart';
 
 class WallpTile extends StatelessWidget {
-  const WallpTile({Key? key, required this.url, required this.name})
+  const WallpTile(
+      {Key? key, required this.url, required this.name, required this.id})
       : super(key: key);
 
   final String url;
+  final String id;
+
   final String name;
 
   @override
@@ -20,9 +24,14 @@ class WallpTile extends StatelessWidget {
           ),
           title: Text(name),
         ),
-        child: Image.network(
-          url,
-          fit: BoxFit.cover,
+        child: GestureDetector(
+          onTap: () => {
+            Navigator.pushNamed(context, WallPreview.id, arguments: id),
+          },
+          child: Image.network(
+            url,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

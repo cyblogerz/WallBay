@@ -1,7 +1,7 @@
 class Bg {
   final String url;
   final String category;
-  final int id;
+  final String id;
   final String name;
 
   Bg({

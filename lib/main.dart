@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wallbay/providers/bgdata.dart';
 import 'package:wallbay/screens/homescreen.dart';
+import 'package:wallbay/screens/wallpaper_preview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemeData.dark(),
           routes: {
             Home.id: (context) => const Home(),
+            WallPreview.id: (ctx) => const WallPreview(),
           },
           initialRoute: Home.id,
         ));

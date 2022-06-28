@@ -6,43 +6,43 @@ class bgData with ChangeNotifier {
   List<Bg> _images = [
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),
     Bg(
         category: "nature",
-        id: 1,
+        id: "1",
         name: "mystery-island-dinosaur-skull",
         url:
             "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg"),

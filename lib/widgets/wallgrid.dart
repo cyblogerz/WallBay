@@ -23,6 +23,7 @@ class WallGrid extends StatelessWidget {
         itemBuilder: (ctx, index) => WallpTile(
               url: images[index].url,
               name: images[index].name,
+              id: images[index].id,
             ));
   }
 }
