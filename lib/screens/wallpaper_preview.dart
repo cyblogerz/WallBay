@@ -28,27 +28,33 @@ class WallPreview extends StatelessWidget {
             elevation: 0.0,
           ),
           body: Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              children: <Widget>[
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.red,
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  width: MediaQuery.of(context).size.width * 0.70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      color: Colors.red),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                          onPressed: () => {},
+                          icon: const Icon(Icons.info_outline)),
+                      IconButton(
+                          onPressed: () => {},
+                          icon: const Icon(Icons.file_download_outlined)),
+                      IconButton(
+                          onPressed: () => {},
+                          icon: const Icon(Icons.photo_rounded)),
+                      IconButton(
+                          onPressed: () => {}, icon: const Icon(Icons.favorite))
+                    ],
+                  ),
                 ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.white,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.black,
-                ),
-              ],
-            ),
-          ),
+              )),
         ),
       ],
     );
