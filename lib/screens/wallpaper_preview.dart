@@ -32,7 +32,7 @@ class WallPreview extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 40),
                 child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width * 0.70,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(32),
