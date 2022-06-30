@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wallbay/providers/bgdata.dart';
+import 'package:wallbay/screens/collections.dart';
 import 'package:wallbay/widgets/wallgrid.dart';
 import 'package:wallbay/widgets/wallptile.dart';
 
@@ -14,7 +15,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
+  // int _selectedIndex = 0;
+  int _currentIndex = 0;
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +39,23 @@ class _HomeState extends State<Home> {
           actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.search))],
         ),
         drawer: Drawer(),
-        body: WallGrid(),
+        body: PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() => _currentIndex = index);
+            },
+            children: [
+              WallGrid(),
+              CollectionsPage(),
+              Container(),
+            ]),
         bottomNavigationBar: BottomNavyBar(
-          selectedIndex: _selectedIndex,
+          selectedIndex: _currentIndex,
           showElevation: true, // use this to remove appBar's elevation
           onItemSelected: (index) => setState(() {
-            _selectedIndex = index;
-            // _pageController.animateToPage(index,
-            //     duration: Duration(milliseconds: 300), curve: Curves.ease);
+            _currentIndex = index;
+            _pageController.animateToPage(index,
+                duration: Duration(milliseconds: 300), curve: Curves.ease);
           }),
           items: [
             BottomNavyBarItem(

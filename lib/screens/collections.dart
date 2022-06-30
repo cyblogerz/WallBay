@@ -11,7 +11,10 @@ class CollectionsPage extends StatelessWidget {
         itemBuilder: ((context, index) => Padding(
             padding: EdgeInsets.all(8),
             child: Container(
-              color: Colors.red,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(32), color: Colors.red),
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.20,
             ))));
   }
 }
