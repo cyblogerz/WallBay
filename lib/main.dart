@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wallbay/providers/bgdata.dart';
+import 'package:wallbay/screens/collections.dart';
 import 'package:wallbay/screens/homescreen.dart';
 import 'package:wallbay/screens/wallpaper_preview.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           routes: {
             Home.id: (context) => const Home(),
             WallPreview.id: (ctx) => const WallPreview(),
+            CollectionsPage.id: (context) => const CollectionsPage()
           },
           initialRoute: Home.id,
         ));
