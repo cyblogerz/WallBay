@@ -29,7 +29,7 @@ class CollectionsPage extends StatelessWidget {
                 ],
               ),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(32), color: Colors.red),
+                  borderRadius: BorderRadius.circular(32), color: Colors.teal),
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.20,
             ))));
