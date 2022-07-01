@@ -13,6 +13,29 @@ class WallGrid extends StatelessWidget {
     final imagesData = Provider.of<bgData>(context);
     final images = imagesData.images;
     final favs = images.where((element) => element.isfavourite).toList();
+
+    if (sId) {
+      if (favs.isEmpty) {
+        return const Center(child: Text('No favourites'));
+      }
+      return GridView.builder(
+          padding: EdgeInsets.all(10),
+          itemCount: sId ? favs.length : images.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemBuilder: (ctx, index) => ChangeNotifierProvider.value(
+                value: sId ? favs[index] : images[index],
+                child: WallpTile(
+                    // url: images[index].url,
+                    // name: images[index].name,
+                    // id: images[index].id,
+                    ),
+              ));
+    }
     return GridView.builder(
         padding: EdgeInsets.all(10),
         itemCount: sId ? favs.length : images.length,
