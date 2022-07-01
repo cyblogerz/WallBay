@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../models/imgmodel.dart';
+import 'imgmodel.dart';
 
 class bgData with ChangeNotifier {
   List<Bg> _images = [

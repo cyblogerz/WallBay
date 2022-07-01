@@ -1,35 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:wallbay/providers/imgmodel.dart';
 import 'package:wallbay/screens/wallpaper_preview.dart';
 
 class WallpTile extends StatelessWidget {
-  const WallpTile(
-      {Key? key, required this.url, required this.name, required this.id})
-      : super(key: key);
+  const WallpTile({Key? key}) : super(key: key);
 
-  final String url;
-  final String id;
+  // final String url;
+  // final String id;
 
-  final String name;
+  // final String name;
 
   @override
   Widget build(BuildContext context) {
+    final wallp = Provider.of<Bg>(context);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),
       child: GridTile(
         footer: GridTileBar(
           backgroundColor: Colors.black54,
-          trailing: Icon(
-            Icons.favorite,
-            color: Colors.pinkAccent,
+          trailing: Consumer<Bg>(
+            builder: (ctx, wallp, child) => IconButton(
+              onPressed: (() => {
+                    wallp.toggleFavourite(),
+                  }),
+              icon: Icon(
+                  wallp.isfavourite ? Icons.favorite : Icons.favorite_border),
+              color: Colors.pink,
+            ),
           ),
-          title: Text(name),
+          title: Text(wallp.name),
         ),
         child: GestureDetector(
           onTap: () => {
-            Navigator.pushNamed(context, WallPreview.id, arguments: id),
+            Navigator.pushNamed(context, WallPreview.id, arguments: wallp.id),
           },
           child: Image.network(
-            url,
+            wallp.url,
             fit: BoxFit.cover,
           ),
         ),

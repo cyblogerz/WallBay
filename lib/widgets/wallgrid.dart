@@ -20,10 +20,13 @@ class WallGrid extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
-        itemBuilder: (ctx, index) => WallpTile(
-              url: images[index].url,
-              name: images[index].name,
-              id: images[index].id,
+        itemBuilder: (ctx, index) => ChangeNotifierProvider.value(
+              value: images[index],
+              child: WallpTile(
+                  // url: images[index].url,
+                  // name: images[index].name,
+                  // id: images[index].id,
+                  ),
             ));
   }
 }
