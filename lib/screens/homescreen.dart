@@ -45,9 +45,11 @@ class _HomeState extends State<Home> {
               setState(() => _currentIndex = index);
             },
             children: [
-              WallGrid(),
+              WallGrid(
+                sId: false,
+              ),
               CollectionsPage(),
-              Container(),
+              WallGrid(sId: true),
             ]),
         bottomNavigationBar: BottomNavyBar(
           selectedIndex: _currentIndex,
