@@ -34,7 +34,8 @@ class WallpTile extends StatelessWidget {
         ),
         child: GestureDetector(
           onTap: () => {
-            Navigator.pushNamed(context, WallPreview.id, arguments: wallp.id),
+            Navigator.pushNamed(context, WallPreview.id,
+                arguments: [wallp.id, wallp.isfavourite]),
           },
           child: Image.network(
             wallp.url,
